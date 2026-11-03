@@ -1,0 +1,5 @@
+Model,Split,Accuracy,Bad_Precision,Bad_Recall,Bad_F1,ROC_AUC
+Majority-Class Baseline,Random,0.7826,0.0,0.0,0.0,0.5
+Logistic Regression (Balanced),Random,0.5297,0.2777,0.7263,0.4017,0.6252
+Logistic Regression (Unweighted),Random,0.7826,0.0,0.0,0.0,0.6225
+Logistic Regression (Balanced),Chronological,0.5194508009153318,0.2870722433460076,0.7704081632653061,0.4182825484764543,0.6275961712118476

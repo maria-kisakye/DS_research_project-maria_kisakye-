@@ -1,31 +1,22 @@
 
-# from pathlib import Path
-# import pandas as pd
+from pathlib import Path
+import pandas as pd
 
-# # Locate the project folder
-# PROJECT_ROOT = Path(__file__).resolve().parents[1]
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+DATA_DIR = PROJECT_ROOT / "data" / "raw"
 
-# # Locate the raw dataset folder
-# DATA_DIR = PROJECT_ROOT / "data" / "raw"
+def load_data():
+    """Load the original Nigerian loan datasets."""
+    performance = pd.read_csv(DATA_DIR / "trainperf.csv")
+    demographics = pd.read_csv(DATA_DIR / "traindemographics.csv")
+    previous_loans = pd.read_csv(DATA_DIR / "trainprevloans.csv")
 
-# # Read the three datasets
-# performance = pd.read_csv(DATA_DIR / "trainperf.csv")
-# demographics = pd.read_csv(DATA_DIR / "traindemographics.csv")
-# previous_loans = pd.read_csv(DATA_DIR / "trainprevloans.csv")
+    return performance, demographics, previous_loans
 
-# # Display the number of records
-# print("Loan performance records:", len(performance))
-# print("Demographic records:", len(demographics))
-# print("Previous loan records:", len(previous_loans))
 
-# # Display the columns in each dataset
-# for name, dataframe in [
-#     ("Performance", performance),
-#     ("Demographics", demographics),
-#     ("Previous Loans", previous_loans),
-# ]:
-#     print(f"\n{name} columns:")
-#     print(dataframe.columns.tolist())
+if __name__ == "__main__":
+    performance, demographics, previous_loans = load_data()
 
-#     print(f"\n{name} missing values:")
-#     print(dataframe.isnull().sum())
+    print("Performance:", performance.shape)
+    print("Demographics:", demographics.shape)
+    print("Previous loans:", previous_loans.shape)
