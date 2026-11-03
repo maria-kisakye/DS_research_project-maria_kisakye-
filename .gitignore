@@ -1,0 +1,38 @@
+
+# Raw datasets
+data/raw/
+data/processed/
+*.csv
+*.zip
+*.parquet
+*.xlsx
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+kaggle.json
+
+# Model checkpoints
+*.pt
+*.pth
+*.pkl
+*.joblib
+
+# Operating system files
+.DS_Store
+Thumbs.db
