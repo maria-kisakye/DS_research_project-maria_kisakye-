@@ -1,0 +1,17 @@
+{
+    "model": "Heterogeneous GraphSAGE",
+    "dataset": "Prosper lender-borrower network",
+    "hidden_channels": 32,
+    "learning_rate": 0.001,
+    "batch_size": 16,
+    "planned_epochs": 10,
+    "random_seed": 42,
+    "training_events": 17361,
+    "validation_events": 4379,
+    "test_events": 5545,
+    "selection_metric": "validation_roc_auc",
+    "checkpoint_status": "completed",
+    "completed_epochs": 10,
+    "best_epoch": 10,
+    "best_validation_roc_auc": 0.6776819592963091
+}
