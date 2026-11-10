@@ -1,0 +1,57 @@
+{
+  "research_project": "A Big-Data Pipeline and Explainable Graph Neural Network for Credit Risk Assessment in Uganda's Fintech",
+  "model_comparison": {
+    "dataset": "Prosper lending network",
+    "test_events": 5545,
+    "logistic_regression_roc_auc": 0.6228482840918077,
+    "graphsage_roc_auc": 0.6557697337068765
+  },
+  "relational_sensitivity": {
+    "evaluation_split": "validation",
+    "method": "Inference-time historical-edge removal",
+    "full_graph_roc_auc": 0.6776819592963091,
+    "direct_only_roc_auc": 0.6536029432329881
+  },
+  "logistic_regression_shap": {
+    "sample_size": 300,
+    "top_features": [
+      {
+        "feature": "numeric__lending_records",
+        "mean_absolute_shap": 1.6508943922737171
+      },
+      {
+        "feature": "numeric__unique_lenders",
+        "mean_absolute_shap": 1.4703731233599537
+      },
+      {
+        "feature": "categorical__credit_grade_AA",
+        "mean_absolute_shap": 0.4472486624302215
+      },
+      {
+        "feature": "categorical__credit_grade_A",
+        "mean_absolute_shap": 0.32729228086144263
+      },
+      {
+        "feature": "numeric__total_recorded_amount",
+        "mean_absolute_shap": 0.2818421676423337
+      }
+    ]
+  },
+  "gnnexplainer": {
+    "method": "GNNExplainer",
+    "sample_size": 10,
+    "historical_edges_removed_per_condition": 20,
+    "events_where_top_removal_larger": 6,
+    "mean_top_removal_change": 0.01161802327260375,
+    "mean_bottom_removal_change": 0.004352062195539475,
+    "interpretation": "Mixed local fidelity; top-ranked removal produced larger changes in 6 of 10 events."
+  },
+  "limitations": [
+    "Retrospective borrowing-event classification",
+    "Prosper data is not Ugandan lending data",
+    "Borrower-date groups are provisional events, not verified loan IDs",
+    "Outcome resolution timestamps are unavailable",
+    "Relational sensitivity is not a separately trained ablation",
+    "GNNExplainer fidelity assessed on a small sample"
+  ]
+}
